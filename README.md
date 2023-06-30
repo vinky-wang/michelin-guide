@@ -9,32 +9,32 @@ The goal of this app is to explore, search, and visualize restaurants recognized
 
 ## Features
 
-Use the ...
+Restaurant Map 
 
-- Restaurant Map tab to 
+- visualizes Michelin award restaurants across the world
 
-  - visualize Michelin awarded restaurants across the world
-  
-  - view restaurant information in its pop-up marker
-  
-- Restaurant Finder tab to 
+- summarizes restaurant information in its pop-up marker
 
-  - search for restaurants matching your selection criteria (Award, Cuisine, and Price Range)
   
-  - summarize results in a table and/or further search among results using keywords
-  
-  - visualize the location of restaurants found across the world 
-  
-  - download restaurant results data as a .csv file
-  
-- Restaurant Look Up tab to 
+Restaurant Finder
 
-  - find more information including Address, Phone Number, Website, and reference to the Michelin Guide article for your entered restaurant name
-  
-  - download restaurant information data as a .csv file
-  
-  
+- searches for restaurants matching the selected criteria: Award, Cuisine, and Price
+
+- summarizes results into an interactive table which can be further filtered using keywords
+
+- visualizes the location of restaurants across the world according to the selected criteria
+
+- downloadable results as a .csv file
+
+Restaurant Look Up
+
+- finds more information about a restaurant: Address, Phone Number, Website, and reference to the Michelin Guide article
+
+- downloadable restaurant information as a .csv file
+
+
 ### Data
+
 The dataset was scraped from the [Michelin Guide](https://guide.michelin.com/en/restaurants) by [Jerry Ng](https://jerrynsh.com/author/jerry/). which can be found on [GitHub](https://github.com/ngshiheng/michelin-my-maps). Jerry provides an excellent article describing the motivation and scraping process which can be found [here](https://jerrynsh.com/how-i-scraped-michelin-guide-using-golang/). 
 
 
