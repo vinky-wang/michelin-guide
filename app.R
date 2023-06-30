@@ -9,6 +9,7 @@
 # Load packages and data -------------------------------------------------------
 # Load packages
 library(tidyverse)
+library(DT)
 library(shiny)
 library(shinyWidgets)
 library(leaflet)
@@ -49,7 +50,7 @@ ui <- navbarPage(
                                               {background-color:#BD2333}",
                                               ".navbar-default .navbar-nav > li > a { color: white;}
                                               ul {
-                                              list-style-image: url(logo.png);
+                                              list-style-image: url('small-star.svg');
                                               }"
                     ))),
                     tags$h1("The Michelin Restaurant Guide"),
@@ -58,6 +59,7 @@ ui <- navbarPage(
                       align = "center",
                       tags$img(
                         src = "logo.png",
+                        style = "width: 600px"
                       ))
                     ,
                     tags$br(),
@@ -65,7 +67,7 @@ ui <- navbarPage(
                     tags$p(tags$em("Michelin Restaurant Guide"), 
                            "is an app that lets you explore, search, and visualize restaurants recognized by the Michelin Guides."),
                     tags$br(),
-                    tags$p("Navigate to the"),
+                    tags$p("Use the ..."),
                     tags$ul(
                       tags$li("Restaurant Map to visualize Michelin awarded restaurants across the world"),
                       tags$li("Restaurant Finder to search for restaurants matching your selection criteria and download the results as a .csv file"),
@@ -75,9 +77,9 @@ ui <- navbarPage(
                     tags$h2("Links"),
                     tags$p("The dataset is scraped from the", tags$a("Michelin Guide", href = "https://guide.michelin.com/en/restaurants"),
                            "by", tags$a("Jerry Ng", href = "https://jerrynsh.com/author/jerry/"),
-                           "which can be found", tags$a("here", href="https://github.com/ngshiheng/michelin-my-maps")), 
-                    tags$p("The code for this Shiny app can be found",
-                           tags$a("here", href="https://github.com/vinky-wang/michelin-guide"))
+                           "which can be found on", tags$a("GitHub", href="https://github.com/ngshiheng/michelin-my-maps")), 
+                    tags$p("The code for this Shiny app can be on",
+                           tags$a("GitHub", href="https://github.com/vinky-wang/michelin-guide"))
            )),
   
   
@@ -209,9 +211,9 @@ server <- function(input, output, session){
   # Filter restaurants based on selection from restaurant finder tab
   restaurant_filtered <- reactive({
       restaurants %>%
-      filter(Award %in% input$award_select|
-               Cuisine %in% input$cuisine_search|
-               Country_Region %in% input$country_region_search|
+      filter(Award %in% input$award_select |
+               Cuisine %in% input$cuisine_search |
+               Country_Region %in% input$country_region_search |
                Price %in% input$price_range)
   })
   
@@ -238,6 +240,7 @@ server <- function(input, output, session){
       addProviderTiles(providers$NASAGIBS.ViirsEarthAtNight2012, 
                        group = "Nasa Earth at Night", 
                        options = providerTileOptions(noWrap = TRUE)) %>%
+      addFullscreenControl() %>%
       addMarkers(                                                               # add marker
         ~Longitude,
         ~Latitude,
