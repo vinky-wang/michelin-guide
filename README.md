@@ -32,8 +32,11 @@ Restaurant Look Up
 
 - downloadable restaurant information as a .csv file
 
+## Navigating the Repository
+The app.R contains the code to reproduce the *Michelin Restaurant Guide* shiny app and the www folder contains the figures used.
 
-### Data
+
+## Data
 
 The dataset was scraped from the [Michelin Guide](https://guide.michelin.com/en/restaurants) by [Jerry Ng](https://jerrynsh.com/author/jerry/). which can be found on [GitHub](https://github.com/ngshiheng/michelin-my-maps). Jerry provides an excellent article describing the motivation and scraping process which can be found [here](https://jerrynsh.com/how-i-scraped-michelin-guide-using-golang/). 
 
