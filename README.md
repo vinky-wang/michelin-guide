@@ -28,7 +28,7 @@ Restaurant Finder
 
 Restaurant Look Up
 
-- finds more information about a restaurant: Address, Phone Number, Website, and reference to the Michelin Guide article
+- provides further information about restaurants: Address, Phone Number, Website, and reference to the Michelin Guide article
 
 - downloadable restaurant information as a .csv file
 
